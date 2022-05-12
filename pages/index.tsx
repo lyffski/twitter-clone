@@ -8,12 +8,11 @@ import { Tweet } from "../typings"
 import { Toaster } from 'react-hot-toast'
 
 interface Props{
-  tweets: Tweet[]
+  tweets: [Tweet]
 }
 
-
-const Home = ({ tweets }: Props) => { //tweets deconstructed from "props"-obj
-  console.log("tweets-test", tweets)
+export default function Home({ tweets }: Props) { //tweets deconstructed from "props"-obj
+  console.log("TEST tweets-test", tweets)
 
   return (
     <div className="lg:max-w-6xl mx-auto max-h-screen overflow-hidden">
@@ -34,13 +33,12 @@ const Home = ({ tweets }: Props) => { //tweets deconstructed from "props"-obj
   )
 }
 
-export default Home
-
-export const getSeverSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps = async () => {
   const tweets = await fetchTweets(); //call API, by utils/fetchTweets()
-  return{
+  
+ return{  
     props:{
-      tweets,
-    },
+      tweets
+    }
   }
 }

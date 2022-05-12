@@ -11,7 +11,6 @@ export default async function handler(
   res: NextApiResponse<Data>
 ) {
     const data: TweetBody = JSON.parse(req.body);
-
     const mutations = {
         mutations: [
             {

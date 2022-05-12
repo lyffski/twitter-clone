@@ -6,13 +6,13 @@ export type TweetBody = { // values appended in DIC:schemas
     image?: string
 } 
 
-export interface Tweet extends TweetBody{
-    _id: string // generic form sanity "_" since those are coming form sanity
-    _cratedAt: string 
-    _updatedAt: string
-    _rev: string
-    _type: "tweet"
-    blockTweet: boolean //bannig opt
+export interface Tweet extends TweetBody {
+_id: string // generic form sanity "_" since those are coming form sanity
+_cratedAt: string 
+_updatedAt: string
+_rev: string
+_type: "tweet" //assosciated with sanity scheams "name":field
+blockTweet: boolean //bannig opt
 }
 
 export type CommentBody = { // values appended in DIC:schemas
